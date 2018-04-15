@@ -33,10 +33,10 @@ export const Navbar = () => {
 
 			<ul className="nav justify-content-end">
 		  		<li className="nav-item">
-		    		<a className="nav-link" target="_blank" href="https://github.com/yashrajb"><span style={styles.span} className="fa fa-github"></span></a>
+		    		<a className="nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/yashrajb"><span style={styles.span} className="fa fa-github"></span></a>
 		  		</li>
 		  		<li className="nav-item">
-		    		<a className="nav-link" target="_blank" href="https://www.instagram.com/yashraj_basan/"><span style={styles.span} className="fa fa-instagram"></span></a>
+		    		<a className="nav-link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/yashraj_basan/"><span style={styles.span} className="fa fa-instagram"></span></a>
 		  		</li>
 	       </ul>
 				

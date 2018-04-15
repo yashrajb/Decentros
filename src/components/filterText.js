@@ -67,6 +67,7 @@ export class ApiFilters extends React.Component {
                           value={this.props.text.text}
                           onChange={this.onTextChange}
                           className="form-control"
+                          placeholder="default value is bitcoin"
                         />
                   </div>
 

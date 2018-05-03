@@ -72,10 +72,10 @@ export class ApiFilters extends React.Component {
                   </div>
 
                    <div className="col-1">
-                  <input type="submit"
+                  <button
                       onClick={this.onSubmit}
                       className="btn btn-default"
-                      />
+                  >Submit</button>
           </div>
               </div>
 

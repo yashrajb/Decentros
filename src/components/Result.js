@@ -35,12 +35,12 @@ main:{
 
 
 
-if(this.props.currency === null) {
+if(this.props.error !== '') {
 
 return (
 
 	<div>
-		<p style={styles.main} className="alert alert-danger">Pls enter valid input</p>
+		<p style={styles.main} className="alert alert-danger">{this.props.error}</p>
 	</div>
 
 

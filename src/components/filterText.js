@@ -9,7 +9,8 @@ import Result from './Result';
 export class ApiFilters extends React.Component {
 
   state = {
-  currency:[]
+  currency:[],
+  error:''
 }
 
 
@@ -26,30 +27,53 @@ export class ApiFilters extends React.Component {
 
     e.preventDefault();
 
-    console.log(e);
+    if(this.props.text.text==="" || this.props.text.text===null){
 
-    axios.get(`https://api.coinmarketcap.com/v1/ticker/${this.props.text.text}/?limit=1`)
+
+      this.setState({
+        currency:[],
+        error:'Please give some input.'
+      })
+
+
+    }else {
+
+
+
+
+      axios.get(`https://api.coinmarketcap.com/v1/ticker/${this.props.text.text}/?limit=1`)
       .then((response) => {
         if (response.status === 200) {
 
           this.setState({
-            currency:response.data
+            currency:response.data,
+            error:''
           });
           
         }
 
       }).catch((e) => {
         this.setState({
-          currency:null
+          currency:null,
+          error:'Something happened wrong'
         })
       });
+
+
+
+
+    }
+
+    
   }
+
+  
 
 
   render() {
 
       
-
+    
       
 
       return (
@@ -59,6 +83,7 @@ export class ApiFilters extends React.Component {
         
        <div className="container main-el" style={styles.h1}>
        <Header/>
+       
        <div className="form-row">
 
                   <div className="col-11">
@@ -67,7 +92,7 @@ export class ApiFilters extends React.Component {
                           value={this.props.text.text}
                           onChange={this.onTextChange}
                           className="form-control"
-                          placeholder="default value is bitcoin"
+                          placeholder="e.g - bitcoin,dash"
                         />
                   </div>
 
@@ -76,12 +101,11 @@ export class ApiFilters extends React.Component {
                       onClick={this.onSubmit}
                       className="btn btn-default"
                   >Submit</button>
+               
           </div>
+
               </div>
-
-
-              
-      
+          
          
         
 
